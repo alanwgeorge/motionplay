@@ -18,42 +18,42 @@
 
             <include
                 android:id="@id/view8"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view7"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view6"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view5"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view4"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view3"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view2"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <include
                 android:id="@id/view1"
-                layout="@layout/card2"
+                layout="@layout/card"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

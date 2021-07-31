@@ -17,13 +17,6 @@
         app:duration="1000">
     </Transition>
 
-    <Transition
-        android:id="@+id/expanded_to_collapse"
-        app:constraintSetStart="@id/expanded"
-        app:constraintSetEnd="@+id/collapsed"
-        app:duration="1000">
-    </Transition>
-
     <ConstraintSet android:id="@+id/start">
         <Constraint android:id="@+id/view1"
             android:layout_width="0dp"

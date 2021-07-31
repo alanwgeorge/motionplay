@@ -1,7 +1,5 @@
 package com.example.motionplay.ui.main
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.TypedValue
@@ -15,9 +13,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.map
-import androidx.transition.*
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import com.example.motionplay.R
-import com.example.motionplay.databinding.Card2Binding
+import com.example.motionplay.databinding.CardBinding
 import com.example.motionplay.databinding.Play1FragmentBinding
 import kotlin.random.Random
 
@@ -31,7 +30,7 @@ class Play1Fragment : Fragment(R.layout.play1_fragment) {
         listOf(binding.view1, binding.view2, binding.view3, binding.view4, binding.view5, binding.view6, binding.view7, binding.view8)
     }
 
-    private val cardBindings =  MutableLiveData<List<Card2Binding>>()
+    private val cardBindings =  MutableLiveData<List<CardBinding>>()
     private val cardViews = cardBindings.map { it.map { binding -> binding.root } }
 
     private lateinit var binding: Play1FragmentBinding
@@ -39,41 +38,14 @@ class Play1Fragment : Fragment(R.layout.play1_fragment) {
     private val numberOfCards = Random.nextInt(1, 8)
 
     private val dismissCardOnClick = { view: View, cardViewModel: CardViewModel ->
-        val transition = AutoTransition().apply {
-            addListener(object: Transition.TransitionListener {
-                override fun onTransitionStart(transition: Transition) {}
-                override fun onTransitionEnd(transition: Transition) {
-                    cardBindings.value?.let {
-                        val newList = it.toMutableList().apply {  removeAt(cardViewModel.index) }
-                        cardBindings.postValue(newList)
-                    }
-                }
-                override fun onTransitionCancel(transition: Transition) {}
-                override fun onTransitionPause(transition: Transition) {}
-                override fun onTransitionResume(transition: Transition) {}
-            })
-        }
-
-        TransitionManager.beginDelayedTransition(binding.motion, transition)
+        TransitionManager.beginDelayedTransition(binding.motion, AutoTransition())
 
         binding.motion.removeView(view)
-//                    view.visibility = View.GONE
 
-
-//        view.animate()
-//            .translationX(-1000f)
-//            .setDuration(1000)
-//            .setListener(object: AnimatorListenerAdapter() {
-//                override fun onAnimationEnd(animation: Animator?) {
-////                    TransitionManager.beginDelayedTransition(binding.motion, AutoTransition())
-//                    binding.motion.removeView(view)
-////                    view.visibility = View.GONE
-//                    cardBindings.value?.let {
-//                        val newList = it.toMutableList().apply {  removeAt(cardViewModel.index) }
-//                        cardBindings.postValue(newList)
-//                    }
-//                }
-//            })
+        cardBindings.value?.let {
+            val newList = it.toMutableList().apply {  removeAt(cardViewModel.index) }
+            cardBindings.postValue(newList)
+        }
         Unit
     }
 
@@ -170,7 +142,7 @@ class Play1Fragment : Fragment(R.layout.play1_fragment) {
         cardBindings.observe(viewLifecycleOwner) {
             it.forEachIndexed { index, cardBinding ->
                 cardBinding.viewModel = CardViewModel(index).apply {
-                    text.value = "$index :" + resources.getString(R.string.lorem_ipsum)
+                    text.value = resources.getString(R.string.lorem_ipsum)
                     dismissOnClick = dismissCardOnClick
                 }
             }
