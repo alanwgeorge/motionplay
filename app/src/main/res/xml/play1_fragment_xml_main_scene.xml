@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/start_to_collapsed"
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@+id/collapsed"
+        app:duration="1000">
+    </Transition>
+
+    <Transition
+        android:id="@+id/collapsed_to_expanded"
+        app:constraintSetStart="@id/collapsed"
+        app:constraintSetEnd="@+id/expanded"
+        app:duration="1000">
+    </Transition>
+
+    <Transition
+        android:id="@+id/expanded_to_collapse"
+        app:constraintSetStart="@id/expanded"
+        app:constraintSetEnd="@+id/collapsed"
+        app:duration="1000">
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view5"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view7"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/view8"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/expanded">
+
+    </ConstraintSet>
+</MotionScene>

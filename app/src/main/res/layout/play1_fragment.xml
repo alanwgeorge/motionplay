@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffeeeeee">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutDescription="@xml/play1_fragment_xml_main_scene">
+
+            <include
+                android:id="@id/view8"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view7"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view6"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view5"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view4"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view3"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view2"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <include
+                android:id="@id/view1"
+                layout="@layout/card2"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/button"
+                android:layout_width="75dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_expand_more_24"
+                android:foreground="?attr/selectableItemBackground"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@id/view1"
+                app:layout_constraintEnd_toEndOf="@id/view1"
+                app:layout_constraintTop_toBottomOf="@id/view1"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </ScrollView>
+</layout>
